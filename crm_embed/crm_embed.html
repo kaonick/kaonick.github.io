@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Popup Chat Room</title>
+    <style>
+        #chatButton {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #chatRoom {
+            display: none;
+            position: fixed;
+            bottom: 60px;
+            right: 20px;
+            width: 800px;
+            height: 600px;
+            border: 1px solid #ccc;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+        #closeBtn {
+            float: right;
+            cursor: pointer;
+            color: #333;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+<button id="chatButton">打開聊天室</button>
+<div id="chatRoom">
+    <div id="closeBtn">X</div>
+        <h3>聊天室</h3>
+    <!-- 聊天室內容 -->
+        <div>
+            <iframe id="ifm" src="http://localhost:9301/?task_id=MyQA&mode=anonymous" height="100%" width="100%" title="Iframe Example"
+                    style="position: absolute; height: 100%; border: none"
+                    sandbox="allow-forms allow-modals allow-popups allow-scripts allow-same-origin allow-top-navigation-by-user-activation"></iframe>
+        </div>
+    <div>
+<!--                    sandbox="allow-forms allow-modals allow-popups allow-pointer-lock allow-popups-to-escape-sandbox allow-presentation allow-scripts allow-same-origin allow-top-navigation allow-top-navigation-by-user-activation">-->
+
+</div>
+<script>
+
+
+
+    document.getElementById("chatButton").onclick = function() {
+        document.getElementById("chatRoom").style.display = "block";
+        infoModal.showModal();
+    };
+    document.getElementById("closeBtn").onclick = function() {
+        document.getElementById("chatRoom").style.display = "none";
+        infoModal.close();
+    };
+</script>
+</body>
+</html>

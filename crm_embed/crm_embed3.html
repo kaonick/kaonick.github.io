@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Popup Chat Room</title>
+    <style>
+        dialog{
+          border: none;
+          box-shadow: 0 2px 6px #ccc;
+          border-radius: 10px;
+          height: 80%;
+          width: 80%;
+        }
+    </style>
+</head>
+<body>
+
+<div id="chatRoom">
+    <div>
+    <button id="show">show</button>
+    <dialog id="infoModal" height="80%" width="90%" >
+        <button id="close">close</button>
+        <iframe id="ifm2" src="http://localhost:9401/crm_embed/crm_embed2.html" height="100%" width="100%" title="Iframe Example" style="position: absolute; height: 100%;weight: 100%; border: none"></iframe>
+    </dialog>
+    </div>
+</div>
+<script>
+    let infoModal=document.querySelector("#infoModal");
+    let btn=document.querySelector("#show");
+    btn.addEventListener("click", function(){
+      infoModal.showModal();
+    })
+    let close=document.querySelector("#close");
+    close.addEventListener("click", function(){
+      infoModal.close();
+    })
+
+</script>
+</body>
+</html>
